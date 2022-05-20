@@ -1,0 +1,20 @@
+{
+  "name": "@andrienko/music-renamer",
+  "version": "0.0.1",
+  "description": "Private tool to rename and move folders accordin to format I use for my music collection.",
+  "main": "mrn.js",
+  "module": "true",
+  "preferGlobal": true,
+  "bin": {
+    "mrn": "./bin/run.mjs"
+  },
+  "keywords": ["music"],
+  "author": "andrienko <evolmate@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "mv": "^2.1.1",
+    "prompt-confirm": "^2.0.4",
+    "rimraf": "^2.4.5"
+  }
+}
