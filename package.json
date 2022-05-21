@@ -8,11 +8,17 @@
   "bin": {
     "mrn": "./bin/run.mjs"
   },
-  "keywords": ["music"],
+  "keywords": [
+    "music"
+  ],
   "author": "andrienko <evolmate@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.0.1",
+    "glob": "^6.0.4",
+    "image-size": "^1.0.1",
+    "jimp": "^0.16.1",
+    "minimist": "^1.2.6",
     "mv": "^2.1.1",
     "prompt-confirm": "^2.0.4",
     "rimraf": "^2.4.5"

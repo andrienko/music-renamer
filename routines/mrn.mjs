@@ -1,7 +1,7 @@
 import path from "path";
 import chalk from "chalk";
 
-import { getFolderData, confirm, moveFolder, removeFolder } from "./util.mjs";
+import { getFolderData, confirm, moveFolder, removeFile } from "../util.mjs";
 
 const getEmptyFolders = async (parentDir) => {
   const emptySubFolderNames = [];
@@ -48,7 +48,6 @@ const moveChildFolders = async (currentDir) => {
 
     if (await confirm("Rename the folders above?")) {
       for (const { from, to } of renames) {
-        console.log(`Moving ${from} to ${to}`);
         await moveFolder(from, to);
       }
     }
@@ -60,14 +59,14 @@ const removeEmptyFolders = async (currentDir) => {
 
   if (foldersToDelete.length) {
     console.log(
-      `Found ${chalk.white(foldersToDelete.length)} empty folders:\n`
+      `\n Found ${chalk.white(foldersToDelete.length)} empty folders:\n`
     );
     for (const del of foldersToDelete) {
       console.log(chalk.gray(del));
     }
     if (await confirm("Delete the empty folders listed above?")) {
       for (const folderToDelete of foldersToDelete) {
-        await removeFolder(folderToDelete);
+        await removeFile(folderToDelete);
       }
     }
   }

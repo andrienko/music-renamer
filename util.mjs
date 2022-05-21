@@ -39,6 +39,7 @@ export const confirm = async (message) => {
 export const moveFolder = (from, to, mkdirp = false) =>
   new Promise((resolve) => {
     mv(from, to, { mkdirp, clobber: false }, (err) => {
+      console.log(`Moving ${chalk.yellow(from)} to ${chalk.green(to)}`);
       if (err) {
         console.log(
           `Could not move ${chalk.yellow(from)} to ${chalk.green(to)}`
@@ -50,5 +51,7 @@ export const moveFolder = (from, to, mkdirp = false) =>
     });
   });
 
-export const removeFolder = (from) =>
-  new Promise((resolve) => rm(from, resolve));
+export const removeFile = (from) => {
+  console.log(`Removing ${chalk.red(from)}`);
+  return new Promise((resolve) => rm(from, resolve));
+};
